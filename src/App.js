@@ -61,6 +61,16 @@ const App =()=> {
       setOperation('')
     }
   }
+  const handleDecimal = () =>{
+    if(!currentNumber.includes('.')){
+      setCurrentNumber(prev => `${prev}.`)
+    }
+  }
+  const handleNegative = () =>{
+    if(currentNumber !== '0'){
+      setCurrentNumber(prev => prev.startsWith('-') ? prev.slice(1) : `-${prev}`);
+    }
+  }
 
   
 
@@ -91,7 +101,7 @@ const App =()=> {
       <Input value = {currentNumber}/>
       <Row>
         <Button label= "C" onClick={handleOnClear}/>
-        <Button label= "- / +" />
+        <Button label= "-+" onClick = {handleNegative}/>
         <Button label= "%"/>
         <Button label= "/" onClick={handleDivNumbers}/>
       </Row>
@@ -115,7 +125,7 @@ const App =()=> {
       </Row>
       <Row>
         <Button label= "0" onClick={() => handleAddNumber('0')}/>
-        <Button label= "," />
+        <Button label= "," onClick = {handleDecimal}/>
         <Button className = "equalsButton" label= "=" onClick={handleEquals}/>
       </Row>
       

@@ -2,12 +2,14 @@ import styled from 'styled-components';
 
 export const ButtonContainer = styled.button`
     padding: 20px;
-    border: 1px solid #cdcdcd;
-    background-color: #1b202b;
+    margin: 3px;
+    border:none;
+    border-radius: 12px;
+    background-color: #9595ab;
     color: #fff;
     font-size: 24px;
-    font-weight: 700;
-    border-radius: 12px;
+    font-weight: 400;
+    font-family: 'Microsoft YaHei';
     flex: 1;
  
     &:hover{
@@ -15,6 +17,6 @@ export const ButtonContainer = styled.button`
     }
     
     &.equalsButton{
-    background-color:#3d177a;
+    background-color:#fc3503;
     }
 `
